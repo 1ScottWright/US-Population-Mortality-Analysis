@@ -35,11 +35,24 @@ The World Bank, Census Bureau, National Institutes of Health, the Centers for Di
 
 ---
 
-## Exploratory Data Analysis
-A demonstration of the inherent phenomina that I am trying to model is conventiently displayed by the graph below.  This graph shows the male mortality rates of persons aged x, y, z from 1950 until 2015.  The graph illustrates the overall decrease that has been observed.
-
+## Exploratory Data Analysis - Target Variables
+A demonstration of the inherent phenomina that I am trying to model is conventiently displayed by the graph below.  This graph shows the male mortality rates of persons aged between 25 and 95 from 1900 until 2015.  The graph illustrates the overall decrease that has been observed.
 
 ![](assets/male_multiple_ages.png)
+
+One can observe a few spikes in mortality in 1918 (Spanish Influenza and WW I), in the 1940s (WW II) for lower ages, and a bit of increase in the 1990s (likely AIDS deaths).
+
+Removing the 1918 portion of the graph and comparing males and females at ages 20 and 40, we can see these mortality changes are prominent for the male mortality but not for female mortality.
+
+![](assets/mort_raw_4charts.png)
+
+From the data, it is easy to take a single age, look at the ratio over time, and determine if mortality is improving or getting worse for that specific slice of the population.  For instance if we look at the same four charts but look at the rate of change, we can see a less predictable pattern.
+
+![](assets/mort_impr_4charts.png)
+
+It is clear from the above analysis, that we should continue to segregate male and female mortality for purposes of this analysis.  There are clearly different drivers impacting how mortality changes over time for males versus females.
+
+It is also clear that we either analyze a single age, or groups of ages, or come up with a different metric for the target variable.  
 
 ---
 
