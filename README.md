@@ -163,9 +163,9 @@ My conclusion is that, there are indeed, factors that are beneficial in forecast
 * The `data` folder contains csv input files and csv output from data cleaning.
 * The `assets` folder contains saved graphs, mainly for inclusion in this report.
 * The `code` folder contains four main Jupyter notebooks used in the analysis:
-> [Data Collection on Features](code/01-data-acquisition-for-features.ipynb) imports the data for the exogenous variables.
-> [EDA on Features](code/02-exploratory-data-analysis.ipynb) walks through some basic visualization on the features/exogenous variables.  
-> [Targets](code/03-data-collection-targets-with-EDA.ipynb) pulls together the data needed to target or `y` variable for the project.  The notebook also walks through the exploratory data analysis for this information.
-> [Time Series Model](code/04-Time-Series-Modeling.ipynb) walks through the time series modeling of the data.
+	> * [Data Collection on Features](code/01-data-acquisition-for-features.ipynb) imports the data for the exogenous variables.  
+	> * [EDA on Features](code/02-exploratory-data-analysis.ipynb) walks through some basic visualization on the features/exogenous variables.    
+	> * [Targets](code/03-data-collection-targets-with-EDA.ipynb) pulls together the data needed to target or `y` variable for the project.  The notebook also walks through the exploratory data analysis for this information.  
+	> * [Time Series Model](code/04-Time-Series-Modeling.ipynb) walks through the time series modeling of the data.
 
 
