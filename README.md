@@ -1,4 +1,4 @@
-# US-Population-Mortality-Analysis
+# US Population Mortality Analysis
 
 Capstone Project for General Assembly Data Science Immersive Program
 
