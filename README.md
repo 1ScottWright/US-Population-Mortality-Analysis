@@ -79,8 +79,15 @@ The graph below shows the last few years in more detail.  One can see that the l
 
 ### Exploratory Data Analysis - Feature Variables
 
-The feature variables were derived from a various of sources, mainly from US government agencies.  The sources of those data variables are documented in the Jupyter notebook [Features](code/01-data-acquisition-for-features.ipynb).  
+The feature variables were derived from a various of sources, mainly from US government agencies.  The sources of those data variables are documented in the Jupyter notebook [Features](code/01-data-acquisition-for-features.ipynb).  The data files that the notebook reads are saved in the folder `data`.
 
+There were a couple of variables, when plotted, that had a strange pattern.  These are discussed in the EDA notebook for features [Feature EDA](code/02-exploratory-data-analysis.ipynb).  One item that was very interesting was the weight measure.  I collected three measures from the CDC.  Each of these are a percentage of the population that is:  Overweight, Obese, and Severely Obese.  What I did not initially understand is that that `overweight` measure is overweight but not obese.  The `obese` measure is both obese and severely obese.
+
+<p align="center">
+	<img src="weight_measures.png" >
+</p>
+
+These charts show that the as the population was moving from overweight to obese, the population that was neither overweight nor obese did not move into the overweight category at the same rates.
 
 ---
 
