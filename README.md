@@ -52,11 +52,16 @@ From the data, it is easy to take a single age, look at the ratio over time, and
 
 It is clear from the above analysis, that we should continue to segregate male and female mortality for purposes of this analysis.  There are clearly different drivers impacting how mortality changes over time for males versus females.
 
-It is also clear that we either analyze a single age, or groups of ages, or come up with a different metric for the target variable. One measure that can be used is life expectancy.
+It is also clear that we either analyze a single age, or groups of ages, or come up with a different metric for the target variable. One measure that can be used is life expectancy, ![equation](http://latex.codecogs.com/gif.latex?e_{x}).
 
 ![equation](http://latex.codecogs.com/gif.latex?e_{x}&space;=&space;\sum_{t=0}^{\infty&space;}_{t}p_{x})
 
-where ![equation](http://latex.codecogs.com/gif.latex?_{t}p_{x}) is the probability that someone aged x will live for t years.
+where ![equation](http://latex.codecogs.com/gif.latex?_{t}p_{x}) is the probability that someone aged x will live for t years.  To encorporate the entire table, I selected the life expectancy at age 0 as my target variable, ![equation](http://latex.codecogs.com/gif.latex?e_{0}).
+
+The graph below show the change in ![equation](http://latex.codecogs.com/gif.latex?e_{0}) over time for men and women.
+
+![](assets/life_exp.png)
+
 
 ---
 
