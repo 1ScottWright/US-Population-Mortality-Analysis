@@ -60,7 +60,9 @@ where ![equation](http://latex.codecogs.com/gif.latex?_{t}p_{x}) is the probabil
 
 The graph below show the change in ![equation](http://latex.codecogs.com/gif.latex?e_{0}) over time for men and women.
 
-![](assets/life_exp.png)
+<p align="center">
+	<img src="assets/life_exp.png" width="600">
+</p>
 
 
 ---
