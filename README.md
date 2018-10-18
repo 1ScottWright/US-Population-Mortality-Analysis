@@ -79,7 +79,7 @@ The graph below shows the last few years in more detail.  One can see that the l
 
 ### Exploratory Data Analysis - Feature Variables
 
-The feature variables were derived from a various of sources, mainly from US government agencies.  The sources of those data variables are documented in the Jupyter notebook [Features](code/01-data-acquisition-for-features.ipynb).  The data files that the notebook reads are saved in the folder `data`.
+The feature variables were derived from a variety of sources, mainly from US government agencies.  The sources of those data variables are documented in the Jupyter notebook [Features](code/01-data-acquisition-for-features.ipynb).  The data files that the notebook reads are saved in the folder `data`.
 
 There were a couple of variables, when plotted, that had a strange pattern.  These are discussed in the EDA notebook for features [Feature EDA](code/02-exploratory-data-analysis.ipynb).  One item that was very interesting was the weight measure.  I collected three measures from the CDC.  Each of these are a percentage of the population that is:  Overweight, Obese, and Severely Obese.  What I did not initially understand is that that `overweight` measure is overweight but not obese.  The `obese` measure is both obese and severely obese.
 
@@ -92,7 +92,34 @@ These charts show that the as the population was moving from overweight to obese
 ---
 
 ### Modeling & Model Assessment
+Even though it was initially quite clear that this was a problem that would require time series analysis, I still put my data through the paces of the regression techniques that I know:  linear regression with and without regularization, decision trees/forests/boosted.  I didn't have enough observations to try neural network techniques.  As expected, these models produced horrible results.
 
+I started the time series work by evaluating the `stationarity` of my target variable.  Since I was looking at male and female mortality separately, that meant repeating the process for both male life expectancy and female life expectancy.  Luckily, the Dicky Fuller test showed the same result for both.  The initial variables did not exhibit stationarity, but the first difference did.  
+
+Armed with a first difference for the ARIMA model, I then used the auto-correlation and partial auto correlation plots to determine the `p` and `q` parameter for the test.  I show the female version of the ACF and PACF plots below, starting with the female life expectancy and then the first difference plots.
+
+<p align="center">
+	<img src="assets/plot_acf_female.png" width = "600" >
+</p>
+
+
+<p align="center">
+	<img src="assets/plot_acf_female_d1.png" width = "600" >
+</p>
+
+
+<p align="center">
+	<img src="assets/plot_pacf_female_d1.png" width = "600" >
+</p>
+
+After consulting with Matt Brems and reviewing the documentation [here](https://people.duke.edu/~rnau/411arim3.htm), I chose an ARIMA(0,1,0) and included an additional variable equal to an 11 year lag of the endogenous variable.  
+
+I used a train/test split based on time.  The observations from 1960 to 1995 were used as training observations and the test observations were from 1996 to 2015.  I tested various combinations of exogenous variables and also a few different `p` and `q` hyper-parameters.  The final models have different exogenous variables for male versus female but both models were ARIMA(0,1,0).
+
+|r squared | male | female |
+|:---|:---:|:---:|
+|train|0.99|0.99|
+|test|0.97|0.97|
 
 
 ---
