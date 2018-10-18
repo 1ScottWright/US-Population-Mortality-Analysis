@@ -8,11 +8,11 @@ October 22, 2018
 
 ### Executive Summary & Results
 
-My question is whether or not we can find external, macro-level, variables that help explain the change in mortality from year to year.  In paritcular, mortality in the United States has, overtime, decreased leading to longer lives on average.  There have been periods of time, particularly related to disease and war, where improving mortality has stalled or even reveresed.  These times of worsening mortality have been brief and the downward tragectory of mortality rates has continued.  
+My question is whether or not we can find external, macro-level, variables that help explain the change in mortality from year to year.   In paritcular, mortality in the United States has, overtime, decreased, leading to longer lives on average.  There have been periods of time, particularly related to disease and war, where improving mortality has stalled or even reveresed.  These times of worsening mortality have been brief and the improving trend of mortality rates quickly has quickly recovered from these negative events.  
 
 The computation of entire mortality tables for a given year is laborious and time consuming.  If there are other factors that can help predict changes in life expectancy, particularly factors that are readily measured for other purposes, these factors could give a first look into what to expect once the definitive statistic, derived from the actual mortality tables, is available.
 
-Overall, I created two similar time series models one to test male mortality and one to test female mortality.  I gathered many potential features, but during the modeling process narrowed down the variables that were effective to:  income inequality, the labor participation rate, teh return on the S&P 500, percentage of the population that was overweight, annual percent increase in military spending, and the alcohol consumption per capital.  All of these variables were used to build the male model.  
+Overall, I created two similar time series models one to test male mortality and one to test female mortality.  I gathered many potential features, but during the modeling process narrowed down the variables that were effective to:  income inequality, the labor participation rate, the return on the S&P 500, percentage of the population that was overweight, year-over-year percent increase in military spending, and the alcohol consumption per capital.  All of these variables were used to build the male model.  
 
 Three features were not only unneccesary for the female model, but they made the model perform significantly worse:  income inequality, labor participation rate, and the military spending measure.
 
@@ -27,9 +27,9 @@ Please see [presentation](US_mortality_presentation.pptx) for the slides present
 ---
 
 ### Data Gathering Process
-The data gathering process was cumbersome.  The features that impact mortality were selected based on general assumptions on what could impact life expectancy, on factors that could potentially be influencing the opioid epidemic, and on factors that may model the overall state of the world for the US population.  The target variables, male and female life expectancy, are not directly observable, but rather, are statistics computed on raw mortality data.  The mortality data is available, on a mult-year lag, from the Social Security Administration.  The Jupyter notebooks perform the calcualtions to turn the moratlity data into target variables.
+The data gathering process was cumbersome.  The features that impact mortality were selected based on general assumptions on what could impact life expectancy, factors that could potentially be influencing the opioid epidemic, and factors that may model the overall state of the world for the US population.  The target variables, male and female life expectancy, are not directly observable, but rather, are statistics computed on raw mortality data.  The mortality data is available, on a mult-year lag, from the Social Security Administration.  The Jupyter notebooks in the `code` section of the GitHub repository perform the calcualtions to turn the moratlity data into target variables.
 
-As discussed below, the sources of each of the data elements are documented in the Jupyter notebooks.  Many data elements were reported at various points in time in varying formats.  I typically converted those data elements into csv files outside of Python and then read in the files.  For example, the percentage of the population covered by health insurance was an element that has not been consistently measured over time.  I found a government report from 1970 that referenced rates in 1953, 1958, 1963, and 1970.  The more recent surveys from the Census Bureau's Annual Social & Economic Supplement provide data for the last decade.  A third source helped fill in the gaps in between.
+The modeling sources of each of the data elements are documented in the Jupyter notebooks in the `data` folder.  Many data elements were reported at various points in time in varying formats.  I typically converted those data elements into csv files outside of Python and then read in the files.  For example, the percentage of the population covered by health insurance was an element that has not been consistently measured over time.  I found a government report from 1970 that referenced rates in 1953, 1958, 1963, and 1970.  The more recent surveys from the Census Bureau's Annual Social & Economic Supplement provide data for the last decade.  A third source helped fill in the gaps in between.
 
 The World Bank, Census Bureau, National Institutes of Health, the Centers for Disease Control and Prevention, the FRED database of the St. Louis Federal Reserve Bank, and the Health and Human Services Department all provided data that were used in the model.  
 
@@ -42,9 +42,9 @@ A demonstration of the inherent phenomina that I am trying to model is conventie
 	<img src="assets/male_multiple_ages.png" width="600">
 </p>
 
-One can observe a few spikes in mortality in 1918 (Spanish Influenza and WW I), in the 1940s (WW II) for lower ages, and a bit of increase in the 1990s (likely AIDS deaths).
+One can observe a few spikes in mortality: 1918 (Spanish Influenza and WW I), in the 1940s (WW II) for lower ages, and a bit of increase in the 1990s (likely AIDS deaths).
 
-Removing the 1918 portion of the graph and comparing males and females at ages 20 and 40, we can see these mortality changes are prominent for the male mortality but not for female mortality.
+Removing the 1918 portion of the graph and comparing males and females at ages 20 and 40, we can see these mortality changes are prominent for male mortality but not for female mortality.
 
 ![](assets/mort_raw_4charts.png)
 
@@ -61,15 +61,15 @@ It is also clear that we either analyze a single age, or groups of ages, or come
 </p>
 
 
-where ![equation](http://latex.codecogs.com/gif.latex?_{t}p_{x}) is the probability that someone aged x will live for t years.  To encorporate the entire table, I selected the life expectancy at age 0 as my target variable, ![equation](http://latex.codecogs.com/gif.latex?e_{0}).
+where ![equation](http://latex.codecogs.com/gif.latex?_{t}p_{x}) is the probability that someone aged x will live for t years.  To encorporate the entire table, I selected the life expectancy at age 0 as my target variable, ![equation](http://latex.codecogs.com/gif.latex?e_{0}).  
 
-The graph below show the change in ![equation](http://latex.codecogs.com/gif.latex?e_{0}) over time for men and women.
+The graph below shows the change in ![equation](http://latex.codecogs.com/gif.latex?e_{0}) over time for men and women.
 
 <p align="center">
 	<img src="assets/life_exp.png" width="600">
 </p>
 
-The graph below shows the last few years in more detail.  One can see that the life expectancy is beginning to decrease.  
+And this graph shows the last few years in more detail.  One can see that the life expectancy is beginning to decrease in 2014/2015.  
 
 <p align="center">
 	<img src="assets/life_exp_recent.png" width="600">
@@ -148,19 +148,24 @@ Feature list with indications of features used in each model:
 |Alcohol consumption per capita|[✓]|[✓]|
 |Tobacco usage percent|[ ]|[ ]|
 
+The model only performs slightly better than a fully auto-regressive model (0.5% in terms of R-squared).  However, I do believe that the interactions of life expectancy and exogenous variables is instructive and worthwhile to monitor. 
 
 ---
 
 ### Conclusion
-My conclusion is that, there are indeed, factors that are beneficial in forecasting the direction of population mortality.  The factors that influence the model are different between male and female mortality, and these factors make some intuitive sense based on past gender roles.  I will be curious if, over time, those differences persist as society continues to progress beyond historical gender norms.
+My conclusion is that, there are indeed, factors that are beneficial in forecasting the direction of population mortality.  The factors that influence the model are different between male and female mortality, and these factors make some intuitive sense based on historical gender roles.  For example, military factors influence only male mortality and had a detrimental impact to the model results for female mortality.  I will be curious if, over time, those differences persist as society continues to progress beyond those past gender norms.
 
 
 ---
 
-### Directory of Key Notebooks:
+### Directory of Files in GitHub Repository:
 
-03-Time-Series-Modeling.ipynb
-
-This notebook reads in the files created in the steps above that contain potential features and the target variables.  The time-series modeling is then explored using statsmodel packages.  An ARIMA(0,1,0) model is created in the notebook.
+* The `data` folder contains csv input files and csv output from data cleaning.
+* The `assets` folder contains saved graphs, mainly for inclusion in this report.
+* The `code` folder contains four main Jupyter notebooks used in the analysis:
+> [Data Collection on Features](code/01-data-acquisition-for-features.ipynb) imports the data for the exogenous variables.
+> [EDA on Features](code/02-exploratory-data-analysis.ipynb) walks through some basic visualization on the features/exogenous variables.  
+> [Targets](code/03-data-collection-targets-with-EDA.ipynb) pulls together the data needed to target or `y` variable for the project.  The notebook also walks through the exploratory data analysis for this information.
+> [Time Series Model](code/04-Time-Series-Modeling.ipynb) walks through the time series modeling of the data.
 
 
