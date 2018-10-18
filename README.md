@@ -4,6 +4,8 @@ Capstone Project for General Assembly Data Science Immersive Program
 
 October 22, 2018
 
+---
+
 ## Executive Summary & Results
 
 My question is whether or not we can find external, macro-level, variables that help explain the change in mortality from year to year.  In paritcular, mortality in the United States has, overtime, decreased leading to longer lives on average.  There have been periods of time, particularly related to disease and war, where improving mortality has stalled or even reveresed.  These times of worsening mortality have been brief and the downward tragectory of mortality rates has continued.  
@@ -16,10 +18,13 @@ Three features were not only unneccesary for the female model, but they made the
 
 My conclusion is that, there are indeed, factors that are beneficial in forecasting the direction of population mortality.
 
+---
 
 ## Presentation
 
 Please see class_presentation.pptx for the slides presented on the last day of class.  This presentation goes over the exploratory data analysis which highlights key metrics, shows how mortality rates and life epectancy has changed over time, and gives some additional detail with respect to the time series model used for the analysis.
+
+---
 
 ## Data Gathering Process
 The data gathering process was cumbersome.  The features that impact mortality were selected based on general assumptions on what could impact life expectancy, on factors that could potentially be influencing the opioid epidemic, and on factors that may model the overall state of the world for the US population.  The target variables, male and female life expectancy, are not directly observable, but rather, are statistics computed on raw mortality data.  The mortality data is available, on a mult-year lag, from the Social Security Administration.  The Jupyter notebooks perform the calcualtions to turn the moratlity data into target variables.
@@ -28,14 +33,27 @@ As discussed below, the sources of each of the data elements are documented in t
 
 The World Bank, Census Bureau, National Institutes of Health, the Centers for Disease Control and Prevention, the FRED database of the St. Louis Federal Reserve Bank, and the Health and Human Services Department all provided data that were used in the model.  
 
+---
+
 ## Exploratory Data Analysis
-A demonstration of the inherent phenomina that I am trying to model is conventiently displayed by the graph below.  This graph shows the male mortality rates of persons aged x, y, z from 1950 until 2015.  The graph illustrates the overall decrease that has been observed 
+A demonstration of the inherent phenomina that I am trying to model is conventiently displayed by the graph below.  This graph shows the male mortality rates of persons aged x, y, z from 1950 until 2015.  The graph illustrates the overall decrease that has been observed.
+
+
+![](assets/male_multiple_ages.png)
+
+---
 
 ## Modeling & Model Assessment
+
+
+
+---
 
 ## Conclusion
 My conclusion is that, there are indeed, factors that are beneficial in forecasting the direction of population mortality.  The factors that influence the model are different between male and female mortality, and these factors make some intuitive sense based on past gender roles.  I will be curious if, over time, those differences persist as society continues to progress beyond historical gender norms.
 
+
+---
 
 ## Directory of Key Notebooks:
 
