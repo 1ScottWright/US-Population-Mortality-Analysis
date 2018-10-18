@@ -22,7 +22,7 @@ My conclusion is that, there are indeed, factors that are beneficial in forecast
 
 ### Presentation
 
-Please see class_presentation.pptx for the slides presented on the last day of class.  This presentation goes over the exploratory data analysis which highlights key metrics, shows how mortality rates and life epectancy has changed over time, and gives some additional detail with respect to the time series model used for the analysis.
+Please see [presentation](class_presentation.pptx) for the slides presented on the last day of class.  This presentation goes over the exploratory data analysis which highlights key metrics, shows how mortality rates and life epectancy has changed over time, and gives some additional detail with respect to the time series model used for the analysis.
 
 ---
 
