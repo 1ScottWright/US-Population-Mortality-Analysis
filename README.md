@@ -116,10 +116,16 @@ After consulting with Matt Brems and reviewing the documentation [here](https://
 
 I used a train/test split based on time.  The observations from 1960 to 1995 were used as training observations and the test observations were from 1996 to 2015.  I tested various combinations of exogenous variables and also a few different `p` and `q` hyper-parameters.  The final models have different exogenous variables for male versus female but both models were ARIMA(0,1,0).
 
-|r squared | male | female |
+|R squared | Male model| Female model|
 |:---|:---:|:---:|
 |train|99.1%|99.1%|
 |test|97.8%|96.6%|
+
+Feature list with indications of features used in each model:
+|Feature collected | Male model| Female model|
+|:---|:---:|:---:|
+|First difference|[x]|-x]|
+|GDP|[ ]|[ ]|
 
 ---
 
