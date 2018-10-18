@@ -67,6 +67,12 @@ The graph below show the change in ![equation](http://latex.codecogs.com/gif.lat
 	<img src="assets/life_exp.png" width="600">
 </p>
 
+The graph below shows the last few years in more detail.  One can see that the life expectancy is beginning to decrease.  
+
+<p align="center">
+	<img src="assets/life_exp_recent.png" width="600">
+</p>
+
 
 ---
 
