@@ -118,9 +118,8 @@ I used a train/test split based on time.  The observations from 1960 to 1995 wer
 
 |r squared | male | female |
 |:---|:---:|:---:|
-|train|0.99|0.99|
-|test|0.97|0.97|
-
+|train|99.1%|99.1%|
+|test|97.8%|96.6%|
 
 ---
 
