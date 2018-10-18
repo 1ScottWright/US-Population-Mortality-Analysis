@@ -122,10 +122,32 @@ I used a train/test split based on time.  The observations from 1960 to 1995 wer
 |test|97.8%|96.6%|
 
 Feature list with indications of features used in each model:
+
 |Feature collected | Male model| Female model|
 |:---|:---:|:---:|
-|First difference|[x]|-x]|
+|First difference|[✓]|[✓] |
 |GDP|[ ]|[ ]|
+|GDP per capita|[ ]|[ ]|
+|GDP increase yr over yr|[ ]|[ ]|
+|Household income 40th percentile|[ ]|[ ]|
+|Household income 95th percentile|[ ]|[ ]|
+|Income inequality measure|[✓]|[ ]|
+|Labor participation rate|[✓]|[ ]|
+|Military spending - dollars|[ ]|[ ]|
+|Military spending as a percent of GDP|[ ]|[ ]|
+|Military spending per capita|[ ]|[ ]|
+|Military spending yr over yr increase |[✓]|[ ]|
+|Inflation|[ ]|[ ]|
+|Performance of S&P 500|[✓]|[✓]|
+|Return on 3mo T-bill|[ ]|[ ]|
+|Return on 10y T-bond|[ ]|[ ]|
+|Health insurance coverage percent|[ ]|[ ]|
+|Overweight|[✓]|[✓]|
+|Obese|[ ]|[ ]|
+|Severely obese|[ ]|[ ]|
+|Alcohol consumption per capita|[✓]|[✓]|
+|Tobacco usage percent|[ ]|[ ]|
+
 
 ---
 
