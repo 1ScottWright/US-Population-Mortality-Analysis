@@ -8,13 +8,13 @@ October 22, 2018
 
 ### Executive Summary & Results
 
-My question is whether or not we can find external, macro-level, variables that help explain the change in mortality from year to year.   In paritcular, mortality in the United States has, overtime, decreased, leading to longer lives on average.  There have been periods of time, particularly related to disease and war, where improving mortality has stalled or even reveresed.  These times of worsening mortality have been brief and the improving trend of mortality rates quickly has quickly recovered from these negative events.  
+My question is whether or not we can find external, macro-level, variables that help explain the change in mortality from year to year.   In particular, mortality in the United States has, overtime, decreased, leading to longer lives on average.  There have been periods of time, particularly related to disease and war, where improving mortality has stalled or even reversed.  These times of worsening mortality have been brief and the improving trend of mortality rates quickly has quickly recovered from these negative events.  
 
 The computation of entire mortality tables for a given year is laborious and time consuming.  If there are other factors that can help predict changes in life expectancy, particularly factors that are readily measured for other purposes, these factors could give a first look into what to expect once the definitive statistic, derived from the actual mortality tables, is available.
 
 Overall, I created two similar time series models one to test male mortality and one to test female mortality.  I gathered many potential features, but during the modeling process narrowed down the variables that were effective to:  income inequality, the labor participation rate, the return on the S&P 500, percentage of the population that was overweight, year-over-year percent increase in military spending, and the alcohol consumption per capital.  All of these variables were used to build the male model.  
 
-Three features were not only unneccesary for the female model, but they made the model perform significantly worse:  income inequality, labor participation rate, and the military spending measure.
+Three features were not only unnecessary for the female model, but they made the model perform significantly worse:  income inequality, labor participation rate, and the military spending measure.
 
 My conclusion is that, there are indeed, factors that are beneficial in forecasting the direction of population mortality.
 
@@ -22,12 +22,12 @@ My conclusion is that, there are indeed, factors that are beneficial in forecast
 
 ### Presentation
 
-Please see [presentation](US_mortality_presentation.pptx) for the slides presented on the last day of class.  This presentation goes over the exploratory data analysis which highlights key metrics, shows how mortality rates and life epectancy has changed over time, and gives some additional detail with respect to the time series model used for the analysis.
+Please see [presentation](US_mortality_presentation.pptx) for the slides presented on the last day of class.  This presentation goes over the exploratory data analysis which highlights key metrics, shows how mortality rates and life expectancy has changed over time, and gives some additional detail with respect to the time series model used for the analysis.
 
 ---
 
 ### Data Gathering Process
-The data gathering process was cumbersome.  The features that impact mortality were selected based on general assumptions on what could impact life expectancy, factors that could potentially be influencing the opioid epidemic, and factors that may model the overall state of the world for the US population.  The target variables, male and female life expectancy, are not directly observable, but rather, are statistics computed on raw mortality data.  The mortality data is available, on a mult-year lag, from the Social Security Administration.  The Jupyter notebooks in the `code` section of the GitHub repository perform the calcualtions to turn the moratlity data into target variables.
+The data gathering process was cumbersome.  The features that impact mortality were selected based on general assumptions on what could impact life expectancy, factors that could potentially be influencing the opioid epidemic, and factors that may model the overall state of the world for the US population.  The target variables, male and female life expectancy, are not directly observable, but rather, are statistics computed on raw mortality data.  The mortality data is available, on a multi-year lag, from the Social Security Administration.  The Jupyter notebooks in the `code` section of the GitHub repository perform the calculations to turn the mortality data into target variables.
 
 The modeling sources of each of the data elements are documented in the Jupyter notebooks in the `data` folder.  Many data elements were reported at various points in time in varying formats.  I typically converted those data elements into csv files outside of Python and then read in the files.  For example, the percentage of the population covered by health insurance was an element that has not been consistently measured over time.  I found a government report from 1970 that referenced rates in 1953, 1958, 1963, and 1970.  The more recent surveys from the Census Bureau's Annual Social & Economic Supplement provide data for the last decade.  A third source helped fill in the gaps in between.
 
@@ -36,7 +36,7 @@ The World Bank, Census Bureau, National Institutes of Health, the Centers for Di
 ---
 
 ### Exploratory Data Analysis - Target Variables
-A demonstration of the inherent phenomina that I am trying to model is conventiently displayed by the graph below.  This graph shows the male mortality rates of persons aged between 25 and 95 from 1900 until 2015.  The graph illustrates the overall decrease that has been observed.
+A demonstration of the inherent phenomena that I am trying to model is conveniently  displayed by the graph below.  This graph shows the male mortality rates of persons aged between 25 and 95 from 1900 until 2015.  The graph illustrates the overall decrease that has been observed.
 
 <p align="center">
 	<img src="assets/male_multiple_ages.png" width="600">
