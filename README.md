@@ -79,7 +79,8 @@ The graph below shows the last few years in more detail.  One can see that the l
 
 ### Exploratory Data Analysis - Feature Variables
 
-The 
+The feature variables were derived from a various of sources, mainly from US government agencies.  The sources of those data variables are documented in the Jupyter notebook [Features](code/01-data-acquisition-for-features.ipynb).  
+
 
 ---
 
