@@ -12,7 +12,7 @@ My question is whether or not we can find external, macro-level, variables that 
 
 The computation of entire mortality tables for a given year is laborious and time consuming.  If there are other factors that can help predict changes in life expectancy, particularly factors that are readily measured for other purposes, these factors could give a first look into what to expect once the definitive statistic, derived from the actual mortality tables, is available.
 
-Overall, I created two similar time series models one to test male mortality and one to test female mortality.  I gathered many potential features, but during the modeling process narrowed down the variables that were effective to:  income inequality, the labor participation rate, the return on the S&P 500, percentage of the population that was overweight, year-over-year percent increase in military spending, and the alcohol consumption per capital.  All of these variables were used to build the male model.  
+Overall, I created two similar time series models one to test male mortality and one to test female mortality.  I gathered many potential features, but during the modeling process narrowed down the variables that were effective to:  income inequality, the labor participation rate, the return on the S&P 500, percentage of the population that was overweight, year-over-year percent increase in military spending, and the alcohol consumption per capita.  All of these variables were used to build the male model.  
 
 Three features were not only unnecessary for the female model, but they made the model perform significantly worse:  income inequality, labor participation rate, and the military spending measure.
 
