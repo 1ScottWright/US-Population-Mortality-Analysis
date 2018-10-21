@@ -167,5 +167,6 @@ My conclusion is that, there are indeed, factors that are beneficial in forecast
 	> * [EDA on Features](code/02-exploratory-data-analysis.ipynb) walks through some basic visualization on the features/exogenous variables.    
 	> * [Targets](code/03-data-collection-targets-with-EDA.ipynb) pulls together the data needed to target or `y` variable for the project.  The notebook also walks through the exploratory data analysis for this information.  
 	> * [Time Series Model](code/04-Time-Series-Modeling.ipynb) walks through the time series modeling of the data.
+* The `presentation` folder contains a PowerPoint and pdf version of the presentation I made on the last day of class.
 
 
